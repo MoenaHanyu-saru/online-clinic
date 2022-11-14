@@ -1,0 +1,49 @@
+footer {
+  background: $white;
+  padding: 40px 0 0 0;
+  @include mq(sp) {
+    padding: 30px 0 0 0;
+  }
+  .footer-block .logo {
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    @include mq(sp) {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+  }
+  .footer-nav {
+    margin-bottom: 40px;
+    @include mq(sp) {
+      margin-bottom: 30px;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0 4%;
+      li {
+        a {
+          transition: ease .3s;
+          font-size: 1.4rem;
+          @include mq(sp) {
+            font-size: 1.2rem;
+          }
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+  small {
+    display: block;
+    text-align: center;
+    background: $red;
+    color: $white;
+    font-size: 1rem;
+    padding: 40px;
+  }
+}
+

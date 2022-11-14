@@ -1,0 +1,221 @@
+/* =============================================
+よくあるご質問
+============================================= */
+.faq-link-wrap {
+  display: block;
+  background: $red;
+  padding: 10px 20px;
+  border-radius: 10px;
+  @include mq(sp) {
+    padding: 8px 10px;
+  }
+  li {
+    color: $white;
+    &:not(:last-child){
+        border-bottom: solid 1px $white;
+    }
+    a {
+      display: block;
+      padding: 10px 0;
+      transition: all 0.3s;
+      position: relative;
+      padding-right: 30px;
+      font-size: 1.4rem;
+      &:hover {
+        opacity: 0.5;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url("./../../images/faq/link-arrow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        width: 16px;
+        height: 10px;
+        @include mq(sp) {
+          right: 13px;
+          width: 13px;
+          height: 7px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+.question-block {
+  &:not(:last-child) {
+    margin-bottom: 70px;
+    @include mq(sp) {
+      margin-bottom: 50px;
+    }
+  }
+}
+.question-block h2 {
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .question-block h2 {
+    margin-bottom: 50px;
+  }
+}
+
+.ac > li {
+  /* margin-bottomにすると変な動きをするのでpaddingにする */
+  list-style: none;
+  border-radius: 10px;
+  background: #ffffff;
+  margin-bottom: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  @include mq(sp) {
+    margin-bottom: 10px;
+  }
+}
+
+.ac-label {
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: ease .3s;
+  transition: ease .3s;
+  border-radius: 20px;
+  display: flex;
+}
+
+.ac-label p {
+  padding: 20px 30px;
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .ac-label p {
+    padding-right: 50px;
+    font-size: 1.4rem;
+  }
+}
+
+.ac-label:hover {
+  opacity: 0.6;
+}
+
+.ac-label:before {
+  content: 'Q';
+  font-family: "M PLUS 1p", sans-serif;
+  display: block;
+  color: $red;
+  font-size: 2.5rem;
+  width: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .ac-label:before {
+    padding: 0 25px;
+  }
+}
+
+.ac-content {
+  display: none;
+  padding: 20px 100px;
+  border-top: 1px solid #F2EDE7;
+}
+
+@media screen and (max-width: 768px) {
+  .ac-content {
+    padding: 32px 32px;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .ac-content {
+    padding: 16px 16px;
+  }
+}
+
+.ac-content p {
+  line-height: 1.7;
+}
+
+/* .ac-labelを親要素としてアイコン位置を絶対値で指定 */
+.icon-wrap {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translatey(-50%);
+          transform: translatey(-50%);
+  width: 50px;
+  height: 50px;
+  background: none;
+}
+
+@media screen and (max-width: 768px) {
+  .icon-wrap {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .icon-wrap {
+    width: 50px;
+    height: 50px;
+    right: 3px;
+  }
+}
+
+/* .icon-wrapの中でプラスを中央に位置させるために.iconを親要素に設定 */
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+/* プラスアイコン */
+/* ２本の線を.icon-wrapの中央に並行に重ねる */
+.icon:before,
+.icon:after {
+  position: absolute;
+  content: "";
+  display: block;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  background: $red;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 3px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 515px) {
+  .icon:before,
+  .icon:after {
+    width: 40%;
+    height: 2px;
+  }
+}
+
+/* そのうち1本を縦にする */
+.icon:before {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* プラスアイコンクリック後、マイナスにする */
+.icon.open:before {
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotate(0deg);
+}

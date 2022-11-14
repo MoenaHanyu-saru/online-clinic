@@ -1,0 +1,155 @@
+.greeting-message-block {
+  text-align: center;
+}
+
+.policy-title {
+  text-align: center;
+  margin-bottom: 50px;
+  p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    @include mq(sp) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.policy-item {
+  margin-bottom: 80px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .policy-item-title {
+    display: flex;
+    align-items: center;
+    @include mq(sp) {
+      flex-direction: column;
+    }
+    .policy-item-number {
+      background: $orange-light;
+      color: $white;
+      margin: 20px;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 3rem;
+      font-weight: bold;
+      margin-right: 5%;
+      @include mq(sp) {
+        font-size: 2rem;
+        width: 45px;
+        height: 45px;
+      }
+    }
+    p {
+      font-size: 2.5rem;
+      font-weight: bold;
+      @include mq(sp) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .line {
+      content: '';
+      width: 100%;
+      display: block;
+      margin: 20px 0;
+      background-image: repeating-linear-gradient(
+      0deg, #F85E22, #F85E22 8px, transparent 8px, transparent 18px, #F85E22 18px), repeating-linear-gradient(
+      90deg, #F85E22, #F85E22 8px, transparent 8px, transparent 18px, #F85E22 18px), repeating-linear-gradient(
+      180deg, #F85E22, #F85E22 8px, transparent 8px, transparent 18px, #F85E22 18px), repeating-linear-gradient(
+      270deg, #F85E22, #F85E22 8px, transparent 8px, transparent 18px, #F85E22 18px);
+      background-size: 3px 100%, 100% 3px, 3px 100% , 100% 3px;
+      background-position: 0 0, 0 0, -1px 0, 0 0%;
+      background-repeat: no-repeat;
+      height: 2px;
+    @include mq(sp) {
+      margin: 10px 0;
+    }
+  }
+  .policy-image {
+    height: 400px;
+    margin: 50px 0;
+    @include mq(sp-l) {
+      height: 280px;
+      margin: 30px 0;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+  .policy-message-wrap {
+    .policy-message-intro {
+      margin-bottom: 30px;
+    }
+    .policy-message-contents {
+      .policy-message-item {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .policy-message-item-title {
+          display: flex;
+          font-weight: bold;
+          .policy-message-item-title-line {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 2px;
+            background: $black;
+            margin-right: 10px;
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.caution {
+  background: $pale-orange;
+  h2 {
+    font-size: 2.6rem;
+    text-align: center;
+    font-family: $font-round;
+    color: $black;
+    margin-bottom: 30px;
+    @include mq(sp) {
+      font-size: 2rem;
+    }
+  }
+  .caution-block {
+    background: $white;
+    padding: 50px;
+    margin-top: 50px;
+    @include mq(sp-l) {
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .caution-item {
+      margin-bottom: 20px;
+      @include mq(sp-l) {
+        margin-bottom: 10px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .caution-item-title {
+        display: flex;
+        color: $orange;
+        font-weight: bold;
+        span {
+          margin-top: 4px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,631 @@
+/*================================
+	cvr
+=================================*/
+.cvr {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.3s;
+  a {
+    position: relative;
+    width: 100%;
+    background: $red;
+    border: solid 3px $red;
+    color: $white;
+    padding: 10px;
+    font-size: 2.2rem;
+    margin-top: 10px;
+    transition: ease .3s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq(sp) {
+      font-size: 4vw;
+      border: solid 2px $red;
+      z-index: 3;
+      width: 100%;
+      padding: 10px;
+    }
+    img {
+      object-fit: contain;
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   display: block;
+    //   background-image: url("./../../images/fv/arrow.png");
+    //   background-repeat: no-repeat;
+    //   background-size: contain;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   left: 27%;
+    //   width: 30px;
+    //   height: 30px;
+    //   @include mq(sp) {
+    //     left: 2.3vw;
+    //     width:4.8vw;
+    //     height: 4.8vw;;
+    //   }
+    // }
+    &:hover {
+      background: $white;
+      border: solid 3px $red;
+      color: $red;
+    }
+  }
+  @include mq(sp) {
+    margin-right: -15vw;
+  }
+}
+.cvr.open {
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+/*================================
+	ファーストビュー
+=================================*/
+
+.fv {
+  padding-top: 150px;
+  height: auto;
+  background: $dark-grey;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-left: 40px;
+  @include mq(sp) {
+    padding-top: 95px;
+    padding-left: 15vw;
+  }
+  img {
+    object-fit: contain;
+    height: auto;
+  }
+  .fv-text-img-wrap {
+    display: flex;
+    flex-direction: column;
+    a {
+      position: relative;
+      width: 100%;
+      background: $white;
+      border: solid 3px $red;
+      color: $red;
+      padding: 5px;
+      padding-left: 60px;
+      border-radius: 100px;
+      font-size: 2.2rem;
+      margin-top: 10px;
+      transition: ease .3s;
+      @include mq(sp) {
+        font-size: 4vw;
+        padding-left: 9.5vw;
+        border: solid 2px $red;
+        z-index: 3;
+        width: 100%;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url("./../../images/fv/arrow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 30px;
+        height: 30px;
+        @include mq(sp) {
+          left: 2.3vw;
+          width:4.8vw;
+          height: 4.8vw;;
+        }
+      }
+      &:hover {
+        background: $red;
+        border: solid 3px $red;
+        color: $white;
+      }
+    }
+    @include mq(sp) {
+      margin-right: -15vw;
+    }
+  }
+  .fv-text-img {
+    max-width: 305px;
+    width: 52vw;
+    z-index: 2;
+  }
+  .fv-doctor-img {
+    padding-top: 40px;
+    max-width: 386px;
+    width: 65vw;
+    z-index: 1;
+  }
+}
+
+
+/*================================
+	共通
+=================================*/
+.section-title-wrap {
+  span {
+    font-size: 1.4rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 50px;
+    color: $red;
+    @include mq(sp) {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: calc(100% - 100px);
+      height: 1px;
+      background-color: $black;
+      @include mq(sp) {
+        left: 80px;
+        width: calc(100% - 80px);
+      }
+    }
+  }
+}
+.left-right-block {
+  display: flex;
+  justify-content: space-between;
+  @include mq(sp) {
+    flex-direction: column;
+  }
+  .left-block {
+    width: 65%;
+    padding-right: 45px;
+    @include mq(sp) {
+      width: 100%;
+      padding-right: 0;
+    }
+    img {
+      max-width: 450px;
+      width: 100%;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 50px;
+    }
+  }
+  .right-block {
+    width: 85%;
+    margin-right: calc(((100vw - 100%) / 2) * -1);
+    @include mq(sp) {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 30px;
+    }
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+  }
+}
+
+/*================================
+	reason
+=================================*/
+.reason {
+  padding: 80px 0;
+  background-image: url(./../../images/reason/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  @include mq(sp) {
+    padding: 50px 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to bottom right, #D21835, #FF6F31);
+    opacity: 0.9;
+    z-index: -1;
+  }
+  .reason-title-wrap {
+    text-align: center;
+    margin-bottom: 50px;
+    color: $white;
+    span {
+      font-size: 1.4rem;
+      position: relative;
+      @include mq(sp) {
+        font-size: 1rem;
+      }
+    }
+    h2 {
+      color: $white;
+    }
+  }
+}
+.reason-wrap {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include mq(sp) {
+      justify-content: center;
+    }
+    li {
+      width: 17%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: $white;
+      font-size: 1.8rem;
+      @include mq(sp) {
+        font-size: 1.6rem;
+        width: 32%;
+        margin-bottom: 25px;
+        &:nth-child(2) {
+          margin: 0 5px;
+        }
+        &:nth-child(4) {
+          margin-right: 2.5px;
+        }
+        &:nth-child(5) {
+          margin-right: 2.5px;
+        }
+      }
+      p {
+        @include mq(sp-n) {
+          font-size: 1.4rem;
+          letter-spacing:0.3px;
+        }
+      }
+      img {
+        object-fit: contain;
+        margin-bottom: 30px;
+        width: 85%;
+        @include mq(sp) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+/*================================
+	intro
+=================================*/
+
+.intro {
+}
+/*================================
+	effect
+=================================*/
+
+.effect-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  li {
+    width: 30%;
+    position: relative;
+    border-radius: 10px;
+    background-color:$white;
+    margin-top: 35px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    @include mq(sp) {
+      width: 48%;
+      margin-top: 20px;
+    }
+    .effect-item-image {
+      height: 65%;
+      border-radius: 10px 10px 0 0;
+      img {
+        height: 100%;
+        border-radius: 10px 10px 0 0;
+        object-fit: cover;
+      }
+    }
+    span {
+      position: absolute;
+      display: inline;
+      background: $red;
+      color: white;
+      top: 0;
+      left: 0;
+      height: auto;
+      padding: 7px 10px;
+      text-align: center;
+      font-size: 3rem;
+      border-radius: 10px 0 10px 0;
+      @include mq(sp) {
+        font-size: 1.8rem;
+        padding: 4px 8px;
+      }
+    }
+    .effect-item-text {
+      font-size: 2rem;
+      height: 35%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include mq(sp) {
+        font-size: 1.8rem;
+        padding: 30px 10px;
+      }
+      p {
+        line-height: 1.6;
+        @include mq(sp) {
+          font-size: 1.4;
+        }
+      }
+    }
+  }
+}
+
+.recommend-block {
+  margin-top: 40px;
+  padding: 30px 50px;
+  border: solid 2px $red;
+  border-radius: 10px;
+  background: $white;
+  position: relative;
+  @include mq(sp) {
+    padding: 20px;
+  }
+  li {
+    padding-left: 50px;
+    border-bottom: solid 1px $dark-grey;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    position: relative;
+    @include mq(sp) {
+      padding-left: 35px;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      background-image: url("./../../images/about/check.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 25px;
+      height: 25px;
+      left: 5px;
+      @include mq(sp) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+/*================================
+	flow
+=================================*/
+.flow-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  li {
+    display: block;
+    width: 31%;
+    background: $white;
+    border-radius:10px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    position: relative;
+    &:not(:last-child) {
+      &:before{
+        content: "";
+        position: absolute;
+        top: 50%;   /* 縦軸をセンタリングする */ 
+        right: -30px;
+        transform: translateY(-50%);   /* 縦軸をセンタリングする */  
+        border: 7px solid transparent;
+        border-left: 10px solid $red;   /* 好みで色を変えてください */  
+        @include mq(sp) {
+          border: 7px solid transparent;
+          border-left: 7px solid transparent;
+          border-top: 10px solid $red; 
+          right: 0;
+          top: auto;
+          bottom: -28px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 3px;
+        }
+      }
+    }
+    @include mq(sp) {
+      flex-direction: column;
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+    .flow-item-text {
+      height: 60%;
+      padding: 30px 20px;
+      .flow-item-title {
+        color: $red;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+      @include mq(sp) {
+        height: auto;
+        padding: 20px 15px;
+      }
+      .step-number {
+        display: block;
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+        color: $red;
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: calc(100% - 80px + 20px);
+          left: 80px;
+          height: 1px;
+          background: $red;
+          top: 50%;
+          transform: translateY(-50%);
+          @include mq(sp) {
+            width: calc(100% - 80px + 15px);
+          }
+        }
+      }
+    }
+    .flow-item-image {
+      height: 40%;
+      border-radius: 0 0 10px 10px;
+      @include mq(sp) {
+        height: 200px;
+      }
+      @include mq(sp-n) {
+        height: 150px;
+      }
+      img {
+        object-fit: cover;
+        height: 100%;
+        border-radius: 0 0 10px 10px;
+      }
+    }
+  }
+}
+
+/*================================
+	subscription
+=================================*/
+.subscription {
+    .section-title-wrap span:after {
+      left: 150px;
+      width: calc(100% - 150px);
+      @include mq(sp) {
+        left: 120px;
+        width: calc(100% - 120px);
+      }
+    }
+}
+.subscription-wrap {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .subscription-block {
+    background: $white;
+    border-radius: 10px;
+    border: solid 1px $red;
+    .subscription-block-title {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 30px;
+      background: $pink;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 0;
+    }
+    .subscription-point-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 30px 0;
+      @include mq(sp) {
+        padding: 15px 7px;
+      }
+      li {
+        width: 25%;
+        padding: 25px;
+        position: relative;
+        &:not(:last-child) {
+          &:after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background: $red;
+            right: 0px;
+            top: 0;
+            @include mq(sp) {
+              content: none;
+            }
+          }
+        }
+        @include mq(sp) {
+          &:not(:nth-child(2n)) {
+            &:after {
+              content: '';
+              position: absolute;
+              height: 100%;
+              width: 1px;
+              background: $red;
+              right: 0px;
+              top: 0;
+            }
+          }
+        }
+        @include mq(sp) {
+          width: 50%;
+          padding: 15px;
+          &:nth-child(1),&:nth-child(2) {
+            &:before {
+              content: '';
+              position: absolute;
+              height: 1px;
+              width: 100%;
+              background: $red;
+              right: 0px;
+              bottom: 0;
+            }
+          }
+        }
+        img {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  &.subscription-wrap2 {
+    .subscription-point-wrap {
+      img {
+        max-width: 710px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      p {
+        padding: 0 30px;
+        @include mq(sp) {
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+}
+
+.payment-text-wrap {
+  div {
+    margin-top: 10px;
+  }
+}

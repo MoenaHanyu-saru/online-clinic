@@ -1,0 +1,23 @@
+
+@font-face {
+	font-family: "round";
+	font-weight: 400;
+	src:
+		 url("../../font/MPLUSRounded1c-Regular.woff") format("woff");
+}
+@font-face {
+	font-family: "round";
+	font-weight: 700;
+	src:
+		 url("../../font/MPLUSRounded1c-Medium.woff") format("woff");
+}
+@font-face {
+	font-family: "quicksand";
+	font-weight: 700;
+	src:
+		 url("../../font/Quicksand-Bold.woff") format("woff");
+}
+
+$font-round : 'round', sans-serif;
+$font-quicksand : 'quicksand', sans-serif;
+

@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+.header {
+  background: $white;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  .logo {
+    width: 200px;
+    @include mq(sp) {
+      width: 130px;
+    }
+    img {
+      object-fit: contain;
+    }
+  }
+  @include mq(sp) {
+    height: 70px;
+    padding: 0 20px;
+  }
+}
+
+.contact-btn ul {
+  display: flex;
+  li {
+    color: $red;
+    a {
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      font-size: 35px;
+      transition: ease .3s;
+      background: $white;
+      border: solid 2px $red;
+      border-radius: 100px;
+      padding-left: 2.5px;
+      &:hover {
+        background: $red;
+        color: $white;
+      }
+      @include mq(sp) {
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+      }
+    }
+    &:not(:last-child) {
+      margin-right: 10px;
+      @include mq(sp) {
+        margin-right: 5px;
+      }
+    }
+    &.mail {
+      a {
+        font-size: 28px;
+        @include mq(sp) {
+          font-size: 23px;
+        }
+      }
+    }
+    &.line {
+      a {
+        font-size: 30px;
+        @include mq(sp) {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+
