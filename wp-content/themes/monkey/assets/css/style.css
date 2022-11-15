@@ -1766,4 +1766,93 @@ footer small {
 /* プラスアイコンクリック後、マイナスにする */
 .icon.open:before {
   transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.contact form .contact-table {
+  width: 100%;
+}
+.contact form .contact-table tr {
+  display: flex;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .contact form .contact-table tr {
+    flex-direction: column;
+  }
+}
+.contact form .contact-table th {
+  text-align: left;
+  width: 30%;
+}
+@media screen and (max-width: 768px) {
+  .contact form .contact-table th {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.contact form .contact-table td {
+  width: 70%;
+}
+@media screen and (max-width: 768px) {
+  .contact form .contact-table td {
+    width: 100%;
+  }
+}
+.contact form .contact-table input {
+  background: #ffffff;
+  border: none;
+}
+.contact form .contact-table textarea {
+  background: #ffffff;
+  border: none;
+}
+.contact form .contact-table .radio-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contact form .contact-table .radio-list span:not(:last-child) {
+  margin-bottom: 5px;
+}
+.contact form .button-wrap {
+  text-align: center;
+  display: flex;
+  gap: 0 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.contact form .button-wrap button {
+  background: #E83E4D;
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 2rem;
+  border: solid 2px #E83E4D;
+  font-family: "M PLUS 1p", sans-serif;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+.contact form .button-wrap button:hover {
+  color: #E83E4D;
+  background: #ffffff;
+  border: solid 2px #E83E4D;
+}
+
+input[type=radio] + span::after {
+  background: #E83E4D;
+}
+
+.mw_wp_form .horizontal-item + .horizontal-item {
+  margin-left: 0 !important;
+}
+
+input[type=radio] + span {
+  padding: 0 0 0 1.6em;
+}
+
+.mw_wp_form .error {
+  font-size: 1.3rem !important;
+  margin: 3px 5px;
+  color: #E83E4D !important;
 }/*# sourceMappingURL=style.css.map */

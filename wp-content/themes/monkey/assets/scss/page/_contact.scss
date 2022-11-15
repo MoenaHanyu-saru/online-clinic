@@ -1,0 +1,85 @@
+.contact form {
+    // background: $white;
+    .contact-table {
+        width: 100%;
+        tr {
+            display: flex;
+            margin-bottom: 20px;
+            @include mq(sp) {
+                flex-direction: column;
+            }
+        }
+        th {
+            text-align: left;
+            width: 30%;
+            @include mq(sp) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        td {
+            width: 70%;
+            @include mq(sp) {
+                width: 100%;
+            }
+        }
+        input {
+            background: $white;
+            border: none;
+        }
+        textarea {
+            background: $white;
+            border: none;
+        }
+        .radio-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            span:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .button-wrap {
+        text-align: center;
+        display: flex;
+        gap: 0 10px;
+        justify-content: center;
+        margin-top: 10px;
+        button {
+            background: $red;
+            color: $white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 5px;
+            font-size: 2rem;
+            border: solid 2px $red;
+            font-family: "M PLUS 1p", sans-serif;
+            cursor: pointer;
+            transition: ease .3s;;
+            &:hover {
+                color: $red;
+                background: $white;
+                border: solid 2px $red;
+            }
+        }
+    }
+}
+
+input[type=radio] + span::after {
+    background: $red;
+}
+
+.mw_wp_form .horizontal-item + .horizontal-item {
+    margin-left: 0!important;
+}
+
+input[type=radio] + span {
+    padding: 0 0 0 1.6em;
+}
+
+.mw_wp_form .error {
+    font-size: 1.3rem!important;
+    margin: 3px 5px;
+    color: $red!important;
+}
